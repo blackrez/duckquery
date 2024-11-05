@@ -12,4 +12,4 @@ RUN apt-get update &&\
     rm -rf /var/lib/apt/lists/* &&\
     duckdb ro.db "INSTALL httpserver FROM community;"
 ENV DUCKDB_HTTPSERVER_FOREGROUND=1
-CMD ["duckdb", "--readonly", "ro.db", "LOAD httpserver", "SELECT httpserve_start('0.0.0.0', 9999, '');"]
+CMD ["duckdb", "--readonly", "ro.db", "LOAD httpserver", "SELECT httpserve_start('0.0.0.0', 8080, '');"]
